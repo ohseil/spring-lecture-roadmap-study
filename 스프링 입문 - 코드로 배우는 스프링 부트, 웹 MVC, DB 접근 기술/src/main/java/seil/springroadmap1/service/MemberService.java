@@ -1,5 +1,6 @@
 package seil.springroadmap1.service;
 
+import org.springframework.stereotype.Service;
 import seil.springroadmap1.domain.Member;
 import seil.springroadmap1.repository.MemberRepository;
 import seil.springroadmap1.repository.MemoryMemberRepository;

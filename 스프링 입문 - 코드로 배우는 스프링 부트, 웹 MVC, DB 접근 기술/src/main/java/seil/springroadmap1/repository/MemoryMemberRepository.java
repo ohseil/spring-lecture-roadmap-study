@@ -1,5 +1,6 @@
 package seil.springroadmap1.repository;
 
+import org.springframework.stereotype.Repository;
 import seil.springroadmap1.domain.Member;
 
 import java.util.*;
