@@ -1,29 +1,21 @@
 package seil.springroadmap1.service;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 import seil.springroadmap1.domain.Member;
-import seil.springroadmap1.repository.MemoryMemberRepository;
+import seil.springroadmap1.repository.MemberRepository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
-class MemberServiceTest {
+@SpringBootTest
+@Transactional
+class MemberServiceIntegrationTest {
 
-    MemberService memberService;
-    MemoryMemberRepository memoryMemberRepository;
-
-    @BeforeEach
-    public void beforeEach() {
-        memoryMemberRepository = new MemoryMemberRepository();
-        memberService = new MemberService(memoryMemberRepository);
-    }
-
-    @AfterEach
-    public void afterEach() {
-        memoryMemberRepository.clearStore();
-    }
+    @Autowired  MemberService memberService;
+    @Autowired  MemberRepository memberRepository;
 
     @Test
     void 회원가입() {
@@ -54,13 +46,5 @@ class MemberServiceTest {
         // then
         IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member2));
         assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
-    }
-
-    @Test
-    void 모든회원검색() {
-    }
-
-    @Test
-    void 아이디로회원한명검색() {
     }
 }
