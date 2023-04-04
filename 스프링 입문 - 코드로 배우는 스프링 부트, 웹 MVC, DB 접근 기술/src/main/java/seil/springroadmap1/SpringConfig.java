@@ -3,6 +3,7 @@ package seil.springroadmap1;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import seil.springroadmap1.repository.JdbcMemberRepository;
+import seil.springroadmap1.repository.JdbcTemplateMemberRepository;
 import seil.springroadmap1.repository.MemberRepository;
 import seil.springroadmap1.repository.MemoryMemberRepository;
 import seil.springroadmap1.service.MemberService;
@@ -28,6 +29,6 @@ public class SpringConfig {
 
     @Bean
     public MemberRepository memberRepository() {
-        return new JdbcMemberRepository(dataSource);
+        return new JdbcTemplateMemberRepository(dataSource);
     }
 }
