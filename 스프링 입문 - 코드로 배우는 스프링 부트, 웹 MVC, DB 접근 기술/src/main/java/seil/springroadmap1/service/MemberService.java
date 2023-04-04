@@ -1,13 +1,13 @@
 package seil.springroadmap1.service;
 
-import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import seil.springroadmap1.domain.Member;
 import seil.springroadmap1.repository.MemberRepository;
-import seil.springroadmap1.repository.MemoryMemberRepository;
 
 import java.util.List;
 import java.util.Optional;
 
+@Transactional
 public class MemberService {
 
     private final MemberRepository memberRepository;
