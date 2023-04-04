@@ -20,19 +20,25 @@ public class SpringConfig {
         this.dataSource = dataSource;
     }*/
 
-    private final EntityManager em;
+   /* private final EntityManager em;
 
     public SpringConfig(final EntityManager em) {
         this.em = em;
+    }*/
+
+    private final MemberRepository memberRepository;
+
+    public SpringConfig(final MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
     }
 
     @Bean
     public MemberService memberService() {
-        return new MemberService(memberRepository());
+        return new MemberService(memberRepository);
     }
 
-    @Bean
+    /*@Bean
     public MemberRepository memberRepository() {
         return new JpaMemberRepository(em);
-    }
+    }*/
 }
