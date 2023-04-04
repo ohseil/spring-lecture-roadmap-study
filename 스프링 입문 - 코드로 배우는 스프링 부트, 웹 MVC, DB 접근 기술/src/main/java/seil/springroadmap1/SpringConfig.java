@@ -2,6 +2,7 @@ package seil.springroadmap1;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import seil.springroadmap1.aop.TimeTraceAop;
 import seil.springroadmap1.repository.*;
 import seil.springroadmap1.service.MemberService;
 
@@ -36,6 +37,11 @@ public class SpringConfig {
     public MemberService memberService() {
         return new MemberService(memberRepository);
     }
+
+    /*@Bean
+    public TimeTraceAop timeTraceAop() {
+        return new TimeTraceAop();
+    }*/
 
     /*@Bean
     public MemberRepository memberRepository() {
