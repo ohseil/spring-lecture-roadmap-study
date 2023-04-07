@@ -8,8 +8,13 @@ import seil.springroadmap2.member.MemoryMemberRepository;
 
 public class DefaultOrderService implements OrderService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
-    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
+
+    public DefaultOrderService(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public Order createOrder(final Long memberId, final String itemName, final int itemPrice) {

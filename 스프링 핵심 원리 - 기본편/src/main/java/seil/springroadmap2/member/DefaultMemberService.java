@@ -2,7 +2,11 @@ package seil.springroadmap2.member;
 
 public class DefaultMemberService implements MemberService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
+
+    public DefaultMemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     @Override
     public void join(final Member member) {
