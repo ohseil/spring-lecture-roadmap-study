@@ -2,6 +2,7 @@ package seil.springroadmap2;
 
 import seil.springroadmap2.discount.DiscountPolicy;
 import seil.springroadmap2.discount.FixDiscountPolicy;
+import seil.springroadmap2.discount.RateDiscountPolicy;
 import seil.springroadmap2.member.DefaultMemberService;
 import seil.springroadmap2.member.MemberRepository;
 import seil.springroadmap2.member.MemberService;
@@ -24,6 +25,6 @@ public class AppConfig {
     }
 
     private DiscountPolicy discountPolicy() {
-        return new FixDiscountPolicy();
+        return new RateDiscountPolicy();
     }
 }
