@@ -2,7 +2,7 @@ package seil.springroadmap2.member;
 
 public interface MemberService {
 
-    void join(final Member member);
+    void join(Member member);
 
-    Member findMember(final Long memberId);
+    Member findMember(Long memberId);
 }

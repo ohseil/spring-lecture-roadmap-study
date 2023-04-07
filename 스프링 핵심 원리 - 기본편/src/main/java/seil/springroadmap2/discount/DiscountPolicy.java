@@ -7,5 +7,5 @@ public interface DiscountPolicy {
     /**
      * @return 할인 대상 금액
      */
-    int discount(final Member member, final int price);
+    int discount(Member member, int price);
 }
