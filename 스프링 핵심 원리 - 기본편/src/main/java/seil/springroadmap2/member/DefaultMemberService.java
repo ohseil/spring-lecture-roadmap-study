@@ -1,5 +1,9 @@
 package seil.springroadmap2.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class DefaultMemberService implements MemberService {
 
     private final MemberRepository memberRepository;

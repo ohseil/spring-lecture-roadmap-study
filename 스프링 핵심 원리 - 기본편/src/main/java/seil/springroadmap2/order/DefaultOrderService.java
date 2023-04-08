@@ -1,11 +1,13 @@
 package seil.springroadmap2.order;
 
+import org.springframework.stereotype.Component;
 import seil.springroadmap2.discount.DiscountPolicy;
 import seil.springroadmap2.discount.FixDiscountPolicy;
 import seil.springroadmap2.member.Member;
 import seil.springroadmap2.member.MemberRepository;
 import seil.springroadmap2.member.MemoryMemberRepository;
 
+@Component
 public class DefaultOrderService implements OrderService {
 
     private final MemberRepository memberRepository;
