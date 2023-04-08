@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoUniqueBeanDefinitionException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import seil.springroadmap2.member.MemberRepository;
 import seil.springroadmap2.member.MemoryMemberRepository;
 
@@ -43,6 +44,7 @@ public class ApplicationContextSameBeanFindTest {
         assertThat(beansOfType.size()).isEqualTo(2);
     }
 
+    @Configuration
     static class SameBeanConfig {
 
         @Bean

@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.NoUniqueBeanDefinitionException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import seil.springroadmap2.discount.DiscountPolicy;
 import seil.springroadmap2.discount.FixDiscountPolicy;
 import seil.springroadmap2.discount.RateDiscountPolicy;
@@ -60,6 +61,7 @@ public class ApplicationContextExtendsFindTest {
         }
     }
 
+    @Configuration
     static class TestConfig {
 
         @Bean
