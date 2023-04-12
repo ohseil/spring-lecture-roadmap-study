@@ -1,10 +1,12 @@
 package seil.springroadmap2.discount;
 
 import org.springframework.stereotype.Component;
+import seil.springroadmap2.annotation.MainDiscountPolicy;
 import seil.springroadmap2.member.Grade;
 import seil.springroadmap2.member.Member;
 
 @Component
+@MainDiscountPolicy
 public class RateDiscountPolicy implements DiscountPolicy {
 
     private final int discountPercent = 10;
